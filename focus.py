@@ -121,10 +121,10 @@ def update_tray_icon():
         return
     if enabled:
         tray_icon.icon = tray_icon_green
-        tray_icon.title = "Keep Awake: ON"
+        tray_icon.title = "Focus: ON"
     else:
         tray_icon.icon = tray_icon_red
-        tray_icon.title = "Keep Awake: OFF"
+        tray_icon.title = "Focus: OFF"
     tray_icon.update_menu()
 
 
@@ -224,7 +224,7 @@ def create_tray_icon():
     tray_icon = pystray.Icon(
         "KeepAwake",
         tray_icon_red,
-        "Keep Awake: OFF",
+        "Focus: OFF",
         menu=pystray.Menu(
             item('Mostra finestra', lambda: show_window()),
             item('Start/Stop', lambda: toggle_enabled()),
@@ -247,7 +247,7 @@ def setup_gui():
     global root, status_label, toggle_btn, last_ping_label, window_visible
 
     root = tk.Tk()
-    root.title("Keep Awake")
+    root.title("Focus")
     root.attributes("-topmost", True)
     root.resizable(False, False)
     root.geometry("200x90+40+40")
